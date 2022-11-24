@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+
+</head>
+<body>
+    <style>
+    body{
+        text-align: center;
+    }
+    h4{
+        color: darkred;
+    }</style>
+    <nav class="navbar bg-primary">
+        <div class="container-fluid " style=" max-width:fit-content">
+          <a class="navbar-brand " href="#">
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="30" fill="white" class="bi bi-calculator" viewBox="0 0 16 16">
+                    <path d="M12 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h8zM4 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H4z"/>
+                    <path d="M4 2.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5h-7a.5.5 0 0 1-.5-.5v-2zm0 4a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm0 3a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm0 3a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm3-6a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm0 3a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm0 3a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm3-6a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm0 3a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-4z"/>
+                  </svg>
+                 BUDGET CALCULATOR
+          </a>
+        </div>
+      </nav>
+    <div class="row container-fluid m-0 p-0">
+        <div class="col ">
+            <div class="card mt-5 ms-5 p-4" style="box-shadow: 10px 10px 5px lightskyblue; max-width: 22rem;">
+                <h4>Monthly Expenses</h4>
+                <div class="card-body">
+                    <input id="rent" class="form-control mt-1  p-1" type="text" placeholder="Room Rent">
+                    <input id="food" class="form-control mt-2  p-1" type="text" placeholder="Food">
+                    <input id="utils" class="form-control mt-2 p-1" type="text" placeholder="Utilities">
+                    <input id="insurance" class="form-control mt-2 p-1" type="text" placeholder="Insurance">
+                    <input id="other" class="form-control mt-2 p-1" type="text" placeholder="Other expenses">
+                    <button onclick="expence()" class="container-fluid btn btn-primary  mt-4 mb-3">Submit</button>
+
+                </div>
+            </div>
+        </div>
+        <div class="col" >
+            <div class="row">
+                <div class="col " >
+                    <div class="card mt-5 ms-5 p-4" style="box-shadow: 10px 10px 5px lightskyblue; max-width: 30rem;max-width: 22rem;">
+                        <h4>Monthly Income</h4>
+                        <div class="card-body">
+                            <div><input id="salary" class="form-control mt-1  p-1" type="text" placeholder="Salary"></div>
+                            <div><input id="others" class="form-control mt-2  p-1" type="text" placeholder="Others"></div>
+                            <button onclick="total_salary()" class="container-fluid btn btn-primary  mt-4 mb-3">Submit</button>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col ">
+                    <div class="card mt-5 ms-5 p-4" style="box-shadow: 8px 8px 5px lightgreen; max-width: 22rem;">
+                        <h4>Savings</h4>
+                        <div class="card-body">
+                            <p id="result"> --------</p>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>window.onload=saving();
+function saving(){
+    if ('savings' in localStorage) {
+        
+        net_savings=localStorage.getItem('savings');
+        result.innerHTML=` <p>${net_savings}</p>` ;
+       }
+       else{
+        localStorage.setItem('savings',000);
+        result.innerHTML=` <p>000</p>` ;
+       }
+}
+function total_salary() {
+   let  total_salary=eval(parseInt (salary.value)+parseInt (others.value));
+    localStorage.setItem('this_month_salary',total_salary);
+   if ('savings' in localStorage) {
+    net_savings=parseInt(localStorage.getItem('savings'));
+    net_savings+=total_salary;
+    localStorage.setItem('savings',net_savings);
+    result.innerHTML=` <p>${net_savings}</p>` ;
+   }
+   else{
+    localStorage.setItem('savings',000);
+    result.innerHTML=` <p>000</p>` ;
+   }
+
+}
+function expence() {
+    expences=eval(parseInt(rent.value)+parseInt(food.value)+parseInt(utils.value)+parseInt(insurance.value)+parseInt(other.value));
+    console.log(expences);
+    localStorage.setItem('this_month_expence',expence);
+    net_savings=parseInt(localStorage.getItem('savings'));
+    balance= net_savings-expences;
+    localStorage.setItem('savings',balance);
+    result.innerHTML=` <p>${balance}</p>` ;
+
+}
+</script>
+</body>
+</html>
